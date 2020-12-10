@@ -1,23 +1,8 @@
 <h1>HELLO ANGULAR WORLD</h1>
 
-<button (click)="backgroundToggle = !backgroundToggle">Toggle</button>
+<button (click)="Toggle = !Toggle">Toggle</button>
 
-<!--<div [ngStyle]="{-->
-<!--  width:'200px',-->
-<!--  height: '200px',-->
-<!--  borderRadius: '5px',-->
-<!--  border: '1px solid #ccc',-->
-<!--  background: backgroundToggle ? 'green' : 'red'-->
-<!--}">-->
-
-<!--</div>-->
-
-<!--<p [ngClass]="{-->
-<!--  red: backgroundToggle,-->
-<!--  blue: !backgroundToggle-->
-<!--}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, nisi!</p>-->
-
-<p
-  [class.blue]="!backgroundToggle"
-  [class.red]="backgroundToggle"
->Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, possimus.</p>
+<p *ngIf="Toggle; else blueP" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, provident?</p>
+<ng-template #blueP>
+  <p class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ut?</p>
+</ng-template>
