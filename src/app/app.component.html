@@ -1,9 +1,19 @@
 <h1>HELLO ANGULAR WORLD</h1>
 
-<button (click)="Toggle = !Toggle">Toggle</button>
+<!--<ul>-->
+<!--  <li *ngFor="let num of arr; let idx = index">-->
+<!--    {{idx + 1}}) <strong>{{num}}</strong>-->
+<!--  </li>-->
+<!--</ul>-->
 
-<div [ngSwitch]="Toggle">
-  <p *ngSwitchCase="true" class="red">Lorem ipsum.</p>
-  <p *ngSwitchCase="false" class="blue">Lorem ipsum.</p>
-  <p *ngSwitchDefault>Lorem ipsum dolor.</p>
-</div>
+<ul>
+  <li *ngFor="let post of objs">
+    <p>{{post.title}} <b>{{post.author}}</b></p>
+    <ul>
+      <li *ngFor="let comms of post.comments">
+        <p>{{comms.name}} wrote:</p>
+        <p>{{comms.text}}</p>
+      </li>
+    </ul>
+  </li>
+</ul>
